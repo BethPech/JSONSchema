@@ -5,17 +5,17 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 
 public class SchemaTest {
     @Test
     void shouldRunTest() {
         given()
-                .baseUri("http://json-schema.org/draft-07/schema")
+                .baseUri("http://localhost:9999/api/v1")
                 .when()
                 .get("/demo/accounts")
                 .then()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
+                .statusCode(404)
         ;
     }
 }
