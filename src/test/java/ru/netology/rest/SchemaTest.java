@@ -17,6 +17,7 @@ public class SchemaTest {
                 .then()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
+                .body("[1].currency", equalTo("USD"))
                 .body("[0].currency", equalTo("RUB"))
         ;
     }
