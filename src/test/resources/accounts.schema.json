@@ -10,7 +10,7 @@
       "balance",
       "currency"
     ],
-    "additionalProperties": false,
+    "additionalProperties": true,
     "properties": {
       "id": {
         "type": "integer"
